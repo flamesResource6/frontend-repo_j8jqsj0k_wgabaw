@@ -1,28 +1,33 @@
-import { useState } from 'react'
+import Navbar from "./components/Navbar";
+import Hero from "./components/Hero";
+import Features from "./components/Features";
+import Workflow from "./components/Workflow";
+import Waitlist from "./components/Waitlist";
+import FAQ from "./components/FAQ";
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <div className="min-h-screen bg-gradient-to-br from-purple-50 to-blue-50 flex items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg">
-        <h1 className="text-3xl font-bold text-gray-800 mb-4">
-          Vibe Coding Platform
-        </h1>
-        <p className="text-gray-600 mb-6">
-          Your AI-powered development environment
-        </p>
-        <div className="text-center">
-          <button
-            onClick={() => setCount(count + 1)}
-            className="bg-blue-500 hover:bg-blue-600 text-white font-semibold py-2 px-4 rounded"
-          >
-            Count is {count}
-          </button>
-        </div>
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-slate-50 via-white to-cyan-50 text-slate-800">
+      <Navbar />
+      <main>
+        <Hero />
+        <Features />
+        <Workflow />
+        <Waitlist />
+        <FAQ />
+        <footer className="py-12">
+          <div className="max-w-6xl mx-auto px-4 text-sm text-slate-500 flex flex-col sm:flex-row justify-between gap-3">
+            <p>© {new Date().getFullYear()} PaperHub — GitHub for Research Papers</p>
+            <div className="flex gap-4">
+              <a href="#features" className="hover:text-slate-700">Features</a>
+              <a href="#workflow" className="hover:text-slate-700">How it works</a>
+              <a href="#waitlist" className="hover:text-slate-700">Join waitlist</a>
+            </div>
+          </div>
+        </footer>
+      </main>
     </div>
-  )
+  );
 }
 
-export default App
+export default App;
